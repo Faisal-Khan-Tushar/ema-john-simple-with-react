@@ -8,8 +8,9 @@ const Shipping = () => {
   const onSubmit = data => {
     console.log(data);}
   return (
-    <div>
-      <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
+    <div className="form">
+     <div>
+     <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
       
       <input placeholder="name" defaultValue={user.displayName} {...register("name")} />
       
@@ -22,6 +23,7 @@ const Shipping = () => {
       <input placeholder="phone number" defaultValue="" {...register("city")} />
       <input type="submit" />
     </form>
+     </div>
     </div>
   );
 };

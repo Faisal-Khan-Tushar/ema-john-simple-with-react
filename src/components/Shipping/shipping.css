@@ -12,3 +12,7 @@
 .error {
   color: red;
 }
+.form {
+  display: flex;
+  justify-content: center;
+}
