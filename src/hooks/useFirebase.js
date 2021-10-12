@@ -1,7 +1,8 @@
 import { useState,useEffect } from "react"
 import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged,signOut  } from "firebase/auth";
+import initializeAuthentication from "../Firebase/firebase.init";
 
-
+initializeAuthentication();
 const useFirebase=()=>{
   //ekhane jodi amra log in kori firebase er maddhome, tahole amake jante hobe je ke login hoise na hoise. E jonno amra ekta state declare kore felbo.karon user log in hoite pare nao hoite pare. Mane at least eitar state ta kintu change hocche tai amra ekta useState ke niye ashbo.
 
@@ -23,6 +24,7 @@ const useFirebase=()=>{
 
     })
   }
+  //observe whether user auth state changed or not
   useEffect(()=>{
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
