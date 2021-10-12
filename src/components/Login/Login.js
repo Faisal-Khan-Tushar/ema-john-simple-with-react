@@ -1,12 +1,20 @@
 import React from 'react';
-import { Link,useLocation } from 'react-router-dom';
+import { Link,useLocation,useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Login.css'
 const Login = () => {
   //useFirebase() theke ami object ke return kortesi, tai ami destructring korbo hocche object diye.
   const {signInUsingGoogle}=useAuth()
   const location =useLocation();
-  console.log('came from',location.state?.from);
+  const history=useHistory();
+  const redirct_uri=location.state?.from || '/shop';
+
+  const handleGoogleLogin =()=>{
+  signInUsingGoogle()
+  .then(result=>{
+ history.push(redirct_uri)
+  })
+  }
   return (
     <div className="login-form">
       <div>
@@ -21,7 +29,7 @@ const Login = () => {
       <p>new to ema-john? <Link to="/register">Create Account</Link></p>
       <div>---------or-----------</div>
       <button className="btn-regular"
-      onClick={signInUsingGoogle}
+      onClick={handleGoogleLogin}
       >Google Sign In</button>
       </div>
     </div>
