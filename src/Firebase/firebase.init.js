@@ -6,14 +6,18 @@ const initializeAuthentication=()=>{
 }
 export default initializeAuthentication;
 
-/*setps for autAhentication- 
+/*steps for authentication- 
 
-Inital Setup
+step-1) Initial Setup
 1.firebase:create project
 2.create web app
 3.get configuration
 4.initialize firebase
 5.Enable auth method
-
+----------------------------------------------------------------
+step-2
+1.create login components
+2.create register component
+3.create route for login and register
 
 */
