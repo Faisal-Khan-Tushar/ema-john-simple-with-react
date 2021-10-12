@@ -20,4 +20,9 @@ step-2
 2.create register component
 3.create route for login and register
 
+step-3
+1.set up sign in method
+2.setup sign out method
+3.user state
+4.special observer (onAuthChanged)
 */
